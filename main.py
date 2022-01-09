@@ -15,8 +15,8 @@ class MyWindow:
 
         self.StudentID_lbl = Label(win,
                                    text='Student ID',
-                                   bg="LavenderBlush4",
-                                   font=("Times", 8, "bold", "italic"))
+                                   bg="Green",
+                                   font=("Helvetica", 8, "bold", "italic"))
         self.StudentID_lbl.place(x=10, y=10)
         self.StudentID_ent = Entry(
             bd=1,
@@ -32,8 +32,8 @@ class MyWindow:
 
         self.Editdata_lbl = Label(win,
                                   text='Edit data\nwith\nStudentID',
-                                  bg="LavenderBlush4",
-                                  font=("Times", 8, "bold", "italic"))
+                                  bg="Green",
+                                  font=("Helvetica", 8, "bold", "italic"))
         self.Editdata_lbl.place(x=450, y=500)
         self.Editdata_ent = Entry(
             bd=1,
@@ -48,13 +48,13 @@ class MyWindow:
         self.edit = Button(win,
                            text='edit',
                            command=self.edit,
-                           bg="slate gray")
+                           bg="Green")
         self.edit.place(x=460, y=565)
 
         self.firstname_lbl = Label(win,
                                    text='First name',
-                                   bg="LavenderBlush4",
-                                   font=("Times", 8, "bold", "italic"))
+                                   bg="green",
+                                   font=("Helvetica", 8, "bold", "italic"))
         self.firstname_lbl.place(x=200, y=10)
         self.firstname_ent = Entry(
             bd=1,
@@ -64,58 +64,33 @@ class MyWindow:
 
         self.surname_lbl = Label(win,
                                  text='Surname',
-                                 bg="LavenderBlush4",
-                                 font=("Times", 8, "bold", "italic"))
+                                 bg="Green",
+                                 font=("Helvetica", 8, "bold", "italic"))
         self.surname_lbl.place(x=200, y=40)
         self.surname_ent = Entry(bd=1, width=30)
         self.surname_ent.place(x=280, y=35)
 
         self.Age_lbl = Label(win,
                              text='Age',
-                             bg="LavenderBlush4",
-                             font=("Times", 8, "bold", "italic"))
+                             bg="Green",
+                             font=("Helvetica", 8, "bold", "italic"))
         self.Age_lbl.place(x=10, y=40)
         self.Age_ent = Entry(bd=1, width=10)
         self.Age_ent.place(x=90, y=35)
 
-        self.Delete_lbl = Label(win,
-                                text='Delete student\nusing ID',
-                                bg="LavenderBlush4",
-                                font=("Times", 8, "bold", "italic"))
-        self.Delete_lbl.place(x=20, y=500)
-        self.delete_ent = Entry(bd=3, width=10)
-        self.delete_ent.place(x=120, y=500)
-        self.delete = Button(win,
-                             text=' Delete',
-                             command=self.delete,
-                             bg="slate grey")
-        self.delete.place(x=20, y=550)
-
-        self.search_lbl = Label(win,
-                                text='Search\nusing ID',
-                                bg="LavenderBlush4",
-                                font=("Times", 8, "bold", "italic"))
-        self.search_lbl.place(x=270, y=500)
-        self.search_ent = Entry(bd=1, width=10)
-        self.search_ent.place(x=330, y=500)
-        self.search_bt = Button(win,
-                                text=' Search',
-                                command=self.search,
-                                bg="slate grey")
-        self.search_bt.place(x=270, y=550)
-
+    
         
 
         self.store_bt = Button(win,
                                text=' Store Data',
                                command=self.store,
-                               bg="slate grey")
+                               bg="Green")
         self.store_bt.place(x=170, y=90)
 
         self.show_bt = Button(win,
                               text=' Show Data',
                               command=self.check,
-                              bg="slate grey")
+                              bg="Green")
         self.show_bt.place(x=280, y=90)
 
         
@@ -137,7 +112,7 @@ class MyWindow:
         print((len(Firstname), len(Surname) , len(Age)))
 
         if len(StudentID)!=6:
-            messagebox.showerror(title="Length error", message="The student ID must be 6 digits long")
+            messagebox.showerror(title="Length error", message="STUDENT ID TOO SHORT!")
             MyWindow(win)
         if (len(Firstname)==0 or len(Surname)==0 or len(Age)==0) :
             messagebox.showerror(title="Input error", message="There must be an input for each field")
@@ -310,7 +285,7 @@ class MyWindow:
 window = tk.Tk()
 mywin = MyWindow(window)
 window.title('Hello Python')
-window.geometry("500x300+10+10")
+window.geometry("400x300+10+10")
 window.attributes('-fullscreen', True)
-window.configure(bg='LavenderBlush4')
+window.configure(bg='Blue')
 window.mainloop()
